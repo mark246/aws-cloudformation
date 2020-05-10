@@ -314,6 +314,27 @@ Resources:
                   - "ecr:GetDownloadUrlForLayer"
                   - "ecr:GetAuthorizationToken"
                 Resource: "*"
+              - Effect: "Allow"
+                Action:
+                  - "ssm:ListInstanceAssociations"
+                  - "ssm:UpdateInstanceInformation"
+                Resource: "*"
+              - Effect: "Allow"
+                Action:
+                  - "ssmmessages:CreateControlChannel"
+                  - "ssmmessages:CreateDataChannel"
+                  - "ssmmessages:OpenControlChannel"
+                  - "ssmmessages:OpenDataChannel"
+                Resource: "*"
+              - Effect: "Allow"
+                Action:
+                  - "ec2messages:AcknowledgeMessage"
+                  - "ec2messages:DeleteMessage"
+                  - "ec2messages:FailMessage"
+                  - "ec2messages:GetEndpoint"
+                  - "ec2messages:GetMessages"
+                  - "ec2messages:SendReply"
+                Resource: "*"
   ApplicationAutoscalingInstanceProfile:
     Type: "AWS::IAM::InstanceProfile"
     Properties:
